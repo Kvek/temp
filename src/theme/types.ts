@@ -567,10 +567,10 @@ export interface ColorsInterface {
 
 declare module '@material-ui/core/styles/createMuiTheme' {
   interface Theme {
-    variables: any;
+    variables: ThemeVariablesInterface;
   }
   interface ThemeOptions {
-    variables: any;
+    variables: ThemeVariablesInterface;
   }
 }
 

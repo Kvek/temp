@@ -11,13 +11,13 @@ import { Sidebar } from './Sidebar';
 import { theme } from './theme';
 
 const useStyles = makeStyles(() => ({
-  root: {
-    display: 'flex',
-  },
   content: {
     flexGrow: 1,
     height: '100vh',
     overflow: 'auto',
+  },
+  root: {
+    display: 'flex',
   },
 }));
 

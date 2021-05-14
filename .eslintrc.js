@@ -38,7 +38,6 @@ module.exports = {
     'better-styled-components',
   ],
   rules: {
-    'space-before-function-paren': ['never'],
     '@typescript-eslint/no-shadow': [0],
     '@typescript-eslint/no-unused-vars': ['error'],
     '@typescript-eslint/no-use-before-define': ['error'],

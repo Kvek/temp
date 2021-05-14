@@ -1,188 +1,206 @@
-import { Button, IconButton } from '@material-ui/core';
+import { Button, ButtonProps, IconButton } from '@material-ui/core';
 import MuiButton from '@material-ui/core/Button';
-import { withStyles } from '@material-ui/core/styles';
+import { Theme, ThemeOptions, withStyles } from '@material-ui/core/styles';
+import { createStyles, Styles } from '@material-ui/styles';
 
 import styled from 'styled-components';
 
-export const NavIconBtn = (theme) =>
-  withStyles(
-    {
-      label: {
-        color: theme.theme_override.navButtontext,
+export const StyledNavIconBtn = (theme: ThemeOptions) =>
+  createStyles({
+    label: {
+      color: theme.variables.navButtontext,
+    },
+    root: {
+      '& svg path': {
+        fill: theme.variables.navButtontext,
       },
-      root: {
+      '&.selected': {
         '& svg path': {
-          fill: theme.theme_override.navButtontext,
+          fill: theme.variables.navButtontextActive,
         },
-        '&.selected': {
-          '& svg path': {
-            fill: theme.theme_override.navButtontextActive,
-          },
-        },
-
-        '&:hover': {
-          '& $label': {
-            color: theme.theme_override.loginButtonTextHover,
-          },
-          backgroundColor: theme.theme_override.loginButtonBgHover,
-          borderColor: theme.theme_override.loginButtonBorderHover,
-        },
-
-        backgroundColor: theme.theme_override.navButtonBg,
-
-        borderColor: theme.theme_override.navButtonBorder,
       },
+
+      '&:hover': {
+        '& $label': {
+          color: theme.variables.loginButtonTextHover,
+        },
+        backgroundColor: theme.variables.loginButtonBgHover,
+        borderColor: theme.variables.loginButtonBorderHover,
+      },
+
+      backgroundColor: theme.variables.navButtonBg,
+
+      borderColor: theme.variables.navButtonBorder,
     },
-    { withTheme: true }
-  )(IconButton);
+  });
 
-export const SaveBtn = (theme) =>
-  withStyles(
-    {
-      label: {
-        '& svg': {
-          fill: 'black',
-          paddingRight: '8px',
-        },
-        color: 'black',
-        fontSize: '12px',
-        fontWeight: 'bold',
+export const NavIconBtn = withStyles(
+  StyledNavIconBtn as Styles<Theme, {}, string>,
+  {
+    withTheme: true,
+  }
+)(IconButton);
+
+export const StyledSaveBtn = (theme: ThemeOptions) =>
+  createStyles({
+    label: {
+      '& svg': {
+        fill: 'black',
+        paddingRight: '8px',
       },
-
-      root: {
-        '&:hover': {
-          backgroundColor: theme.theme_override.success[100],
-        },
-        backgroundColor: theme.theme_override.success[300],
-        borderRadius: '5px',
-        height: '40px',
-
-        minWidth: '100px',
-      },
+      color: 'black',
+      fontSize: '12px',
+      fontWeight: 'bold',
     },
-    { withTheme: true }
-  )(Button);
 
-export const DeleteBtn = (theme) =>
-  withStyles(
-    {
-      label: {
-        '& svg': {
-          fill: theme.theme_override.black[0],
-          paddingRight: '8px',
-        },
-        color: theme.theme_override.black[0],
+    root: {
+      '&:hover': {
+        backgroundColor: theme.variables.success[100],
       },
+      backgroundColor: theme.variables.success[300],
+      borderRadius: '5px',
+      height: '40px',
 
-      root: {
-        '&:hover': {
-          '& $label': {
-            '& svg': {
-              fill: theme.theme_override.important[700],
-            },
-            color: theme.theme_override.important[700],
+      minWidth: '100px',
+    },
+  });
+
+export const SaveBtn = withStyles(StyledSaveBtn as Styles<Theme, {}, string>, {
+  withTheme: true,
+})(Button);
+
+export const StyledDeleteBtn = (theme: ThemeOptions) =>
+  createStyles({
+    label: {
+      '& svg': {
+        fill: theme.variables.black[0],
+        paddingRight: '8px',
+      },
+      color: theme.variables.black[0],
+    },
+
+    root: {
+      '&:hover': {
+        '& $label': {
+          '& svg': {
+            fill: theme.variables.important[700],
           },
-          backgroundColor: 'transparent',
-          borderColor: 'transparent',
+          color: theme.variables.important[700],
         },
+        backgroundColor: 'transparent',
         borderColor: 'transparent',
-
-        padding: '5px 0px',
       },
+      borderColor: 'transparent',
+
+      padding: '5px 0px',
     },
-    { withTheme: true }
-  )(Button);
+  });
 
-export const CreateBtn = (theme) =>
-  withStyles(
-    {
-      label: {
-        '& svg': {
-          fill: theme.theme_override.black[900],
-          paddingRight: '4px',
-        },
-        color: theme.theme_override.black[900],
-      },
+export const DeleteBtn = withStyles(
+  StyledDeleteBtn as Styles<Theme, {}, string>,
+  {
+    withTheme: true,
+  }
+)(Button);
 
-      root: {
-        borderRadius: '100px',
-        padding: '2px 8px',
+export const StyledCreateBtn = (theme: ThemeOptions) =>
+  createStyles({
+    label: {
+      '& svg': {
+        fill: theme.variables.black[900],
+        paddingRight: '4px',
       },
+      color: theme.variables.black[900],
     },
-    { withTheme: true }
-  )(Button);
 
-export const CreateIconBtn = (theme) =>
-  withStyles(
-    {
-      root: {
-        '& svg': {
-          fill: theme.theme_override.black[900],
-        },
-        backgroundColor: theme.theme_override.primary[400],
-      },
+    root: {
+      borderRadius: '100px',
+      padding: '2px 8px',
     },
-    { withTheme: true }
-  )(IconButton);
+  });
 
-export const OnOffButton = styled(Button)`
+export const CreateBtn = withStyles(
+  StyledCreateBtn as Styles<Theme, {}, string>,
+  {
+    withTheme: true,
+  }
+)(Button);
+
+export const StyledCreateIconBtn = (theme: ThemeOptions) =>
+  createStyles({
+    root: {
+      '& svg': {
+        fill: theme.variables.black[900],
+      },
+      backgroundColor: theme.variables.primary[400],
+    },
+  });
+
+export const CreateIconBtn = withStyles(
+  StyledCreateIconBtn as Styles<Theme, {}, string>,
+  {
+    withTheme: true,
+  }
+)(IconButton);
+
+export const StyledOnOffButton = styled(Button)<ButtonProps>`
   && {
     background-color: transparent;
-    border-color: ${({ disable, theme }) =>
-      disable ? theme.important[400] : theme.success[400]};
+    border-color: ${({ disabled, theme }) =>
+      disabled ? theme.important[400] : theme.success[400]};
 
     &:hover {
-      background-color: ${({ disable, theme }) =>
-        disable ? theme.important[400] : theme.success[400]};
+      background-color: ${({ disabled, theme }) =>
+        disabled ? theme.important[400] : theme.success[400]};
       border-color: transparent;
       span {
-        color: ${({ disable, theme }) =>
-          disable ? theme.black[0] : theme.black[900]};
+        color: ${({ disabled, theme }) =>
+          disabled ? theme.black[0] : theme.black[900]};
         svg {
-          fill: ${({ disable, theme }) =>
-            disable ? theme.black[0] : theme.black[900]};
+          fill: ${({ disabled, theme }) =>
+            disabled ? theme.black[0] : theme.black[900]};
         }
       }
     }
 
     span {
-      color: ${({ disable, theme }) =>
-        disable ? theme.important[400] : theme.success[400]};
+      color: ${({ disabled, theme }) =>
+        disabled ? theme.important[400] : theme.success[400]};
       svg {
-        fill: ${({ disable, theme }) =>
-          disable ? theme.important[400] : theme.success[400]};
+        fill: ${({ disabled, theme }) =>
+          disabled ? theme.important[400] : theme.success[400]};
         margin-right: 4px;
       }
     }
   }
 `;
 
-export const GridButtonStyles = (theme) =>
+export const GridButtonStyles = (theme: ThemeOptions) =>
   withStyles(
     {
       containedPrimary: {
         '&:hover': {
           '& $label': {
-            color: theme.theme_override.gridButtonPrimaryTextHover,
+            color: theme.variables.gridButtonPrimaryTextHover,
           },
-          backgroundColor: theme.theme_override.gridButtonPrimaryBgHover,
+          backgroundColor: theme.variables.gridButtonPrimaryBgHover,
         },
-        backgroundColor: theme.theme_override.gridButtonPrimaryBg,
-        borderColor: theme.theme_override.gridButtonPrimaryBorder,
+        backgroundColor: theme.variables.gridButtonPrimaryBg,
+        borderColor: theme.variables.gridButtonPrimaryBorder,
       },
       label: {
-        color: theme.theme_override.gridButtonText,
+        color: theme.variables.gridButtonText,
       },
       root: {
         '&:hover': {
           '& $label': {
-            color: theme.theme_override.gridButtonTextHover,
+            color: theme.variables.gridButtonTextHover,
           },
-          backgroundColor: theme.theme_override.gridButtonBgHover,
-          borderColor: theme.theme_override.gridButtonBorderHover,
+          backgroundColor: theme.variables.gridButtonBgHover,
+          borderColor: theme.variables.gridButtonBorderHover,
         },
-        backgroundColor: theme.theme_override.gridButtonBg,
-        borderColor: theme.theme_override.gridButtonBorder,
+        backgroundColor: theme.variables.gridButtonBg,
+        borderColor: theme.variables.gridButtonBorder,
         borderWidth: '0px',
       },
     },

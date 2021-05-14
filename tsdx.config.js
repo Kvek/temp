@@ -7,6 +7,7 @@ const analyze = require('rollup-plugin-analyzer');
 module.exports = {
   rollup(config, options) {
     config.plugins.push(
+      image({ include: ['**/*.png', '**/*.jpg, **/*.svg'] }),
       postcss({
         extract: !!options.writeMeta,
         inject: false,
@@ -18,7 +19,6 @@ module.exports = {
         ], // only write out CSS for the first bundle (avoids pointless extra files)
         sass: true,
       }),
-      image(),
       analyze()
     );
 

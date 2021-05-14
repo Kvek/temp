@@ -7,28 +7,28 @@ import styled from 'styled-components';
 
 const useStyles = makeStyles(() => ({
   appBar: {
-    width: 'calc(100% - 240px)',
     marginLeft: '240px',
-  },
-  drawer: {
-    width: '240px',
-    flexShrink: 0,
-  },
-  drawerPaper: {
-    width: '240px',
+    width: 'calc(100% - 240px)',
   },
   button: {
     padding: 0,
   },
+  drawer: {
+    flexShrink: 0,
+    width: '240px',
+  },
+  drawerPaper: {
+    width: '240px',
+  },
 }));
 
 const LinkButton = styled(Link)`
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-  text-decoration: inherit;
-  padding: 16px;
   color: inherit;
+  cursor: pointer;
+  height: 100%;
+  padding: 16px;
+  text-decoration: inherit;
+  width: 100%;
 
   &:visited {
     color: inherit;
