@@ -565,6 +565,41 @@ export interface ColorsInterface {
   warning: DefaultWarningType;
 }
 
+export interface GlobalThemeConfigColorsInterface {
+  app: DefaultAppType | {};
+  black: DefaultBlackType | {};
+  buy: DefaultBuyType | {};
+  caution: DefaultCautionType | {};
+  important: DefaultImportantType | {};
+  information: DefaultInformationType | {};
+  pending: DefaultPendingType | {};
+  primary: DefaultPrimaryType | {};
+  risk: DefaultRiskType | {};
+  secondary: DefaultSecondaryType | {};
+  sell: DefaultSellType | {};
+  shadows: DefaultShadowsType | {};
+  status: DefaultStatusType | {};
+  success: DefaultSuccessType | {};
+  transparent: DefaultTransparentType | {};
+  transparentInverse: DefaultTransparentInverseType | {};
+  warning: DefaultWarningType | {};
+}
+
+export interface GlobalThemeConfigType {
+  clientTheme: {
+    overrides: (muiArgs: ThemeVariablesInterface) => Record<string, any> | {};
+    palette: (muiArgs: ThemeVariablesInterface) => Record<string, any> | {};
+    props: (muiArgs?: ThemeVariablesInterface) => Record<string, any> | {};
+    shape: (muiArgs?: ThemeVariablesInterface) => Record<string, any> | {};
+    typography: (muiArgs: ThemeVariablesInterface) => Record<string, any> | {};
+  };
+  clientThemeOverrides: (
+    colorOverrides?: ColorsInterface,
+    classnames?: (...args: Argument[]) => string
+  ) => {} | Record<string, any>;
+  colors: GlobalThemeConfigColorsInterface;
+}
+
 declare module '@material-ui/core/styles/createMuiTheme' {
   interface Theme {
     variables: ThemeVariablesInterface;
@@ -572,21 +607,6 @@ declare module '@material-ui/core/styles/createMuiTheme' {
   interface ThemeOptions {
     variables: ThemeVariablesInterface;
   }
-}
-
-export interface GlobalThemeConfigType {
-  clientTheme: {
-    overrides: (muiArgs: ThemeVariablesInterface) => Record<string, any> | {};
-    palette: (muiArgs: ThemeVariablesInterface) => Record<string, any> | {};
-    props: () => Record<string, any> | {};
-    shape: () => Record<string, any> | {};
-    typography: (muiArgs: ThemeVariablesInterface) => Record<string, any> | {};
-  };
-  clientThemeOverrides: (
-    colorOverrides: ColorsInterface,
-    classnames?: (...args: Argument[]) => string
-  ) => Record<string, any>;
-  colors: ColorsInterface;
 }
 
 declare module '@material-ui/core/styles/overrides' {
