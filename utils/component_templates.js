@@ -45,4 +45,4 @@ describe('${name} Component', () => {
 // index.ts
 const barrel = (name) => `export { ${name}Component } from './${name}';\n`;
 
-module.exports = { component, story, test, barrel };
+module.exports = { barrel, component, story, test };

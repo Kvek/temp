@@ -1,12 +1,12 @@
 import classnames from 'classnames';
 import styled from 'styled-components';
 
-import { CssGridCellType, LinedGridType } from '.';
+import { GridCellInterface, LinedGridType } from '.';
 
 const justify = (property: string) => `justify-items: ${property}`;
 const align = (property: string) => `align-items: ${property}`;
 
-export const CssGridCell = styled.div<CssGridCellType>`
+export const CssGridCell = styled.div<GridCellInterface>`
   align-content: ${({ alignBottom, alignCenter, alignContent, alignTop }) => {
     if (alignTop) return 'flex-start';
     if (alignCenter) return 'center';

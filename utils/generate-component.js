@@ -1,5 +1,5 @@
 const fs = require('fs');
-const { component, story, barrel } = require('./component_templates.js');
+const { barrel, component, story } = require('./component_templates.js');
 
 // grab component name from terminal argument
 const [name] = process.argv.slice(2);

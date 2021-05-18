@@ -1,72 +1,72 @@
-window.colorOverrides = window.colorOverrides || {};
+// window.colorOverrides = window.colorOverrides || {};
 
-const primary = {
-  // Example of colour list
-  // 50: '#e7e8ee',
-  // 100: '#c3c5d6',
-  // 200: '#9ca0b9',
-  // 300: '#787c9d',
-  // // main
-  // 400: '#5e618a',
-  // //
-  // 500: '#454778',
-  // 600: '#3f4070',
-  // 700: '#373765',
-  // 800: '#302e59',
-  // 900: '#231F41',
-  // A100: '#1E1A3C',
-  // A200: '#191636',
-  // A300: '#141027',
-};
+// const primary = {
+//   // Example of colour list
+//   // 50: '#e7e8ee',
+//   // 100: '#c3c5d6',
+//   // 200: '#9ca0b9',
+//   // 300: '#787c9d',
+//   // // main
+//   // 400: '#5e618a',
+//   // //
+//   // 500: '#454778',
+//   // 600: '#3f4070',
+//   // 700: '#373765',
+//   // 800: '#302e59',
+//   // 900: '#231F41',
+//   // A100: '#1E1A3C',
+//   // A200: '#191636',
+//   // A300: '#141027',
+// };
 
-const secondary = {};
+// const secondary = {};
 
-const black = {};
+// const black = {};
 
-const app = {};
+// const app = {};
 
-const success = {};
+// const success = {};
 
-const important = {};
+// const important = {};
 
-const warning = {};
+// const warning = {};
 
-const information = {};
+// const information = {};
 
-const caution = {};
+// const caution = {};
 
-const pending = {};
+// const pending = {};
 
-const risk = {};
+// const risk = {};
 
-const buy = {};
+// const buy = {};
 
-const sell = {};
+// const sell = {};
 
-const status = {};
+// const status = {};
 
-const shadows = {};
+// const shadows = {};
 
-const transparent = {};
+// const transparent = {};
 
-const transparentInverse = {};
+// const transparentInverse = {};
 
-export const colorOverrides = {
-  app,
-  black,
-  buy,
-  caution,
-  important,
-  information,
-  pending,
-  primary,
-  risk,
-  secondary,
-  sell,
-  shadows,
-  status,
-  success,
-  transparent,
-  transparentInverse,
-  warning,
-};
+// export const colorOverrides = {
+//   app,
+//   black,
+//   buy,
+//   caution,
+//   important,
+//   information,
+//   pending,
+//   primary,
+//   risk,
+//   secondary,
+//   sell,
+//   shadows,
+//   status,
+//   success,
+//   transparent,
+//   transparentInverse,
+//   warning,
+// };

@@ -29,6 +29,7 @@ export const setGlobalTheme = ({
   colors,
 }: GlobalThemeConfigType) => {
   const spacing: SpacingOptions = 4;
+
   let overrides: Overrides = {};
   let palette: PaletteOptions = {};
   let props: ComponentsProps = {};
@@ -49,8 +50,6 @@ export const setGlobalTheme = ({
     ...clientThemeOverrides(updatedThemeColors, classnames),
   };
 
-  const muiThemeVariables: ThemeVariablesInterface = variables;
-
   const {
     overrides: clientOverrides,
     palette: clientPalette,
@@ -59,24 +58,26 @@ export const setGlobalTheme = ({
     typography: clientTypography,
   } = clientTheme;
 
+  const muiThemeVariables: ThemeVariablesInterface = variables;
+
   overrides = deepmerge(
     defaultOverrides(muiThemeVariables),
     clientOverrides(muiThemeVariables)
-  );
+  ) as Overrides;
 
   palette = deepmerge(
     defaultPalette(muiThemeVariables),
     clientPalette(muiThemeVariables)
-  );
+  ) as PaletteOptions;
 
   typography = deepmerge(
     defaultTypography(muiThemeVariables),
     clientTypography(muiThemeVariables)
-  );
+  ) as TypographyOptions;
 
-  shape = deepmerge(defaultShape(), clientShape());
+  shape = deepmerge(defaultShape(), clientShape()) as ShapeOptions;
 
-  props = deepmerge(defaultProps(), clientProps());
+  props = deepmerge(defaultProps(), clientProps()) as ComponentsProps;
 
   return createMuiTheme({
     overrides,

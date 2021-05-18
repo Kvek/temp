@@ -20,7 +20,11 @@ import {
   warning as warningDefault,
 } from './default-theme/colors';
 import { themeVariables } from './default-theme/variables';
-import { ColorsInterface, ThemeVariablesInterface } from './types';
+import {
+  ColorsInterface,
+  GlobalThemeConfigColorsInterface,
+  ThemeVariablesInterface,
+} from './types';
 
 export const colorOverride = ({
   app,
@@ -40,7 +44,7 @@ export const colorOverride = ({
   transparent,
   transparentInverse,
   warning,
-}: ColorsInterface): ColorsInterface => ({
+}: GlobalThemeConfigColorsInterface): ColorsInterface => ({
   app: deepmerge(themeVariables.app, app),
   black: deepmerge(themeVariables.black, black),
   buy: deepmerge(themeVariables.buy, buy),

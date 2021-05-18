@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react';
+import React, { CSSProperties, FC, ReactNode } from 'react';
 import { applyContainerQuery } from 'react-container-query';
 
 import classnames from 'classnames';
@@ -29,7 +29,7 @@ const query = {
   },
 };
 
-export interface CssGridCellType {
+export interface GridCellInterface {
   alignBottom?: boolean;
   alignCenter?: boolean;
   alignContent?: string;
@@ -39,7 +39,7 @@ export interface CssGridCellType {
   autoColumns?: string;
   autoRows?: string;
   cell?: boolean;
-  children: ReactNode;
+  children?: ReactNode;
   className?: string;
   col?: string;
   columnGap?: string;
@@ -48,11 +48,12 @@ export interface CssGridCellType {
   columnStart?: string;
   columns?: string;
   containerQuery?: string;
-  display?: string;
+  display?: 'initial' | 'block' | 'inline' | 'gap';
   flow?: string;
   gap?: string;
   height?: string;
   horizontal?: boolean;
+  id?: string;
   justifyCenter?: boolean;
   justifyContent?: string;
   justifyItems?: string;
@@ -71,16 +72,16 @@ export interface CssGridCellType {
   position?: string;
   rowGap?: string;
   rowPosition?: string;
-
   rowSpan?: string;
   rowStart?: string;
   rows?: string;
   scroll?: boolean;
   sm?: string;
   smSpan?: string;
+  style?: CSSProperties;
   top?: string;
   vertical?: boolean;
-  width?: string;
+  width?: string | number;
   xl?: string;
   xlSpan?: string;
   xs?: string;
@@ -97,9 +98,9 @@ interface LinedGridDefaultPropsType {
 
 export interface LinedGridType
   extends LinedGridDefaultPropsType,
-    CssGridCellType {}
+    GridCellInterface {}
 
-const CssGridCellResponsive = (props: CssGridCellType) => {
+export const CssGridCell = applyContainerQuery((props: GridCellInterface) => {
   const { children, className, containerQuery, lg, md, sm, xl, xs } = props;
 
   if (xs || sm || md || lg || xl) {
@@ -113,9 +114,7 @@ const CssGridCellResponsive = (props: CssGridCellType) => {
   }
 
   return <StyledGridCell {...props}>{children}</StyledGridCell>;
-};
-
-export const CssGridCell = applyContainerQuery(CssGridCellResponsive, query);
+}, query);
 
 export const LinedGrid: FC<LinedGridType> = (props) => {
   const { children } = props;

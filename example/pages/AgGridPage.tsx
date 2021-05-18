@@ -5,8 +5,8 @@ import React, { FC } from 'react';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-material.css';
 import { AgGridColumn } from 'ag-grid-react/lib/agGridColumn';
+import { AgGrid, AGTable } from 'celertech';
 
-import { AgGrid, AGTable } from '../../dist';
 import { AgTableStyle } from '../grid';
 
 const MOCK_DATA = [
