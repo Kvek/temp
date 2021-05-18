@@ -1,5 +1,12 @@
 import classnames from 'classnames';
 
+import LOGO_LIGHT from '../../assets/images/celer_black_nb.svg';
+import STAMP from '../../assets/images/celer_cone_only.svg';
+import LOGO from '../../assets/images/celer_coral_nb.svg';
+import CLOSE_ICON from '../../assets/images/close.svg';
+import DISABLED_BG from '../../assets/images/disabled-background-dark-2.png';
+import APP_ICON from '../../assets/images/login-rm-icon-foreground.png';
+import APP_BG from '../../assets/images/webtrader-tessellation-black-20.svg';
 import { ThemeVariablesInterface } from '../types';
 import {
   app,
@@ -20,14 +27,6 @@ import {
   transparentInverse,
   warning,
 } from './colors';
-
-const STAMP = require('../../assets/images/celer_cone_only.svg');
-const LOGO = require('../../assets/images/celer_coral_nb.svg');
-const CLOSE_ICON = require('../../assets/images/close.svg');
-const DISABLED_BG = require('../../assets/images/disabled-background-dark-2.png');
-const APP_ICON = require('../../assets/images/login-rm-icon-foreground.png');
-const APP_BG = require('../../assets/images/webtrader-tessellation-black-20.svg');
-const LOGO_LIGHT = require('../../assets/images/celer_black_nb.svg');
 
 export const themeVariables: ThemeVariablesInterface = {
   AppBg: APP_BG,
